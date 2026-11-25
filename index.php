@@ -10,7 +10,7 @@
     <?php include 'header.php';?>
 
     <main class="main">
-        
+        <a href="create.php">create</a>
     </main>
 
     <?php include 'footer.php';?>

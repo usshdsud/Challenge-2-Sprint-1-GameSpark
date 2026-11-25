@@ -168,3 +168,82 @@ input[type="submit"]:active {
     transform: scale(0.98);
 }
 
+:root {
+  --bg: #14151b;
+  --card: #1e202c;
+  --field: #14151a;
+  --border: #2a2d3b;
+  --text: #f2f3f7;
+  --muted: #9ba0b3;
+  --accent: #f5c518;
+  --accent-ink: #14151a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.4;
+}
+.wrap { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 1.5rem; margin: 0 0 20px; }
+
+.add-btn {
+  display: block; width: 100%;
+  background: var(--accent); color: var(--accent-ink);
+  font-weight: 700; font-size: 1rem; text-align: center;
+  text-decoration: none; padding: 16px; border-radius: 12px;
+  margin-bottom: 20px; transition: filter .15s;
+}
+.add-btn:hover { filter: brightness(1.08); }
+
+.list { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
+.game {
+  display: flex; gap: 16px; align-items: center;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 12px;
+}
+.thumb {
+  flex: 0 0 72px; height: 72px; border-radius: 8px; overflow: hidden;
+  background: var(--field); border: 1px solid var(--border);
+  display: grid; place-items: center; color: var(--muted); font-size: 1.6rem;
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.info { flex: 1; min-width: 0; }
+.name { font-size: 1.1rem; font-weight: 700; margin: 0 0 2px; overflow-wrap: anywhere; }
+.meta { color: var(--muted); font-size: .9rem; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 6px; }
+
+.stars { color: var(--accent); letter-spacing: 2px; font-size: .9rem; }
+.stars .off { color: #3a3d4d; }
+.badge {
+  font-size: .75rem; font-weight: 600; padding: 2px 10px; border-radius: 999px;
+  background: var(--field); border: 1px solid var(--border); color: var(--muted);
+}
+.badge.wishlist    { color: var(--accent); border-color: var(--accent); }
+.badge.speeltnu    { color: #6ee7a8; border-color: #6ee7a8; }
+.badge.uitgespeeld { color: #8ab4ff; border-color: #8ab4ff; }
+.note { color: var(--muted); font-size: .85rem; margin-top: 6px; }
+
+.actions { display: flex; gap: 6px; align-self: flex-end; }
+.icon {
+  width: 32px; height: 32px; display: grid; place-items: center;
+  border-radius: 8px; color: var(--muted); text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.icon:hover { background: var(--field); color: var(--accent); }
+.icon.del:hover { color: #ff6b6b; }
+.icon svg { width: 18px; height: 18px; fill: currentColor; }
+
+.empty, .error {
+  text-align: center; padding: 32px 16px; border-radius: 12px;
+  background: var(--card); border: 1px solid var(--border); color: var(--muted);
+}
+.error { color: #ff9b9b; border-color: #5a2a2a; }
+
+@media (max-width: 420px) {
+  .thumb { flex-basis: 60px; height: 60px; }
+  .game { gap: 12px; }
+}

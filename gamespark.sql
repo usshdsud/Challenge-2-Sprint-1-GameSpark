@@ -4,7 +4,9 @@ CREATE DATABASE IF NOT EXISTS gamespark
 
 USE gamespark;
 
-CREATE TABLE IF NOT EXISTS games (
+DROP TABLE IF EXISTS games;
+
+CREATE TABLE games (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     game_name VARCHAR(100) NOT NULL,
     platform ENUM('pc','playstation','xbox','nintendo') NOT NULL,
@@ -12,6 +14,8 @@ CREATE TABLE IF NOT EXISTS games (
     release_date DATE NULL,
     rating TINYINT UNSIGNED NOT NULL DEFAULT 3,
     status ENUM('wishlist','inbezit','speeltnu','uitgespeeld') NOT NULL DEFAULT 'wishlist',
+    afbeelding VARCHAR(255) NULL,
+    notitie VARCHAR(255) NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT chk_rating CHECK (rating BETWEEN 1 AND 5)
 );

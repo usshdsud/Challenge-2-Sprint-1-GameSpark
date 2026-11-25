@@ -3,6 +3,6 @@
     <nav>
         <a href="index.php">Games</a>
         <a href="create.php">Toevoegen</a>
-        <a href="#">Over</a>
+        <a href="overons.php">Over</a>
     </nav>
 </header>

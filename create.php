@@ -11,10 +11,10 @@
     <?php include 'header.php';?>
 
     <main class="main">
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
         
         <label for="game_name">Game Naam:</label>
-        <input type="text" name="Game Naam" placeholder="Game Naam">
+        <input type="text" name="game_name" placeholder="Game Naam">
 
 
         <label for="platform">Platform:</label>
@@ -49,7 +49,17 @@
             <option value="uitgespeeld">Uitgespeeld</option>
         </select>
 
+        <label for="afbeelding">Afbeelding:</label>
+        <input type="file" id="afbeelding" name="afbeelding" accept="image/*">
+
+        <label for="notitie">Notitie:</label>
+        <textarea id="notitie" name="notitie" rows="3" maxlength="255"
+                  placeholder="Korte notitie"></textarea>
+
+        </textarea>
+
         <input type="submit" value="Toevoegen">
+        </form>
     </main>
 
     <?php include 'footer.php';?>

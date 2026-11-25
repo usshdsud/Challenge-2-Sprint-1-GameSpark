@@ -10,7 +10,7 @@
 
     <?php include 'header.php';?>
 
-    <main div class="main">
+    <main class="main">
         <form action="" method="post">
         
         <label for="game_name">Game Naam:</label>
@@ -39,7 +39,7 @@
         <input type="date" id="release_date" name="release_date">
 
         <label for="rating">Beoordeling:</label>
-        <input type="range" id="rating" name="rating" min="1" max="10">
+        <input type="range" id="rating" name="rating" min="1" max="5" step="1">
 
         <label for="status">Status:</label>
         <select id="status" name="status">
@@ -48,6 +48,8 @@
             <option value="speeltnu">Speelt nu</option>
             <option value="uitgespeeld">Uitgespeeld</option>
         </select>
+
+        <input type="submit" value="Toevoegen">
     </main>
 
     <?php include 'footer.php';?>
